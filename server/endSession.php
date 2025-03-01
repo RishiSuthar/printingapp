@@ -1,7 +1,7 @@
 <?php
 // Path to the uploads directory and uploads.json file
-$uploadDir = 'https://webprinter.netlify.app/uploads/';
-$uploadsFile = 'https://webprinter.netlify.app/uploads.json';
+$uploadDir = 'https://webprinter.netlify.app/server/uploads/';
+$uploadsFile = 'https://webprinter.netlify.app/server/uploads.json';
 
 // Delete all files in the uploads directory
 foreach (glob($uploadDir . '*') as $file) {
