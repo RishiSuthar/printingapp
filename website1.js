@@ -10,7 +10,7 @@ let totalCost = 0;
 // Fetch uploaded images from the server (simulate with a JSON file)
 async function fetchUploadedImages() {
   try {
-    const response = await fetch("server/uploads.json");
+    const response = await fetch("/printingapp/server/uploads.json");
     if (!response.ok) throw new Error("Uploads file not found");
     images = await response.json();
     updateUI();
