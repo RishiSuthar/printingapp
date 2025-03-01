@@ -10,7 +10,7 @@ let totalCost = 0;
 // Fetch uploaded images from the server (simulate with a JSON file)
 async function fetchUploadedImages() {
   try {
-    const response = await fetch("https://webprinter.netlify.app/server/uploads.json");
+    const response = await fetch("https://printingapp.vercel.app/server/uploads.json");
     if (!response.ok) throw new Error("Uploads file not found");
     images = await response.json();
     updateUI();
@@ -34,7 +34,7 @@ function updateUI() {
 
 // Simulate checking the M-Pesa payment status
 checkPaymentButton.addEventListener("click", () => {
-  fetch("https://webprinter.netlify.app/server/payment.json")
+  fetch("https://printingapp.vercel.app/server/payment.json")
     .then(response => response.json())
     .then(data => {
       if (data.paid) {
@@ -100,7 +100,7 @@ endButton.addEventListener("click", async () => {
   const confirmation = confirm("Are you sure you want to end this session? This will delete all uploaded files.");
   if (confirmation) {
     try {
-      const response = await fetch("https://webprinter.netlify.app/server/endSession.php", {
+      const response = await fetch("https://printingapp.vercel.app/server/endSession.php", {
         method: "POST",
       });
       const data = await response.json();
