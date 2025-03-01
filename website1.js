@@ -10,7 +10,7 @@ let totalCost = 0;
 // Fetch uploaded images from the server (simulate with a JSON file)
 async function fetchUploadedImages() {
   try {
-    const response = await fetch("/printingapp/server/uploads.json");
+    const response = await fetch("server/uploads.json");
     if (!response.ok) throw new Error("Uploads file not found");
     images = await response.json();
     updateUI();
@@ -102,21 +102,11 @@ endButton.addEventListener("click", async () => {
     try {
       const response = await fetch("server/endSession.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        }
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json().catch(() => {
-        throw new Error("Invalid JSON response from server.");
-      });
-
+      const data = await response.json();
       if (data.status === "success") {
         alert("Session ended successfully. All files have been deleted.");
+        // Optionally, you could reload the page or reset UI
         location.reload();
       } else {
         alert("Error ending the session.");

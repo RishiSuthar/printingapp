@@ -1,8 +1,8 @@
 <?php
 // This is a basic example. In production, you should add validations and error handling.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $uploadDir = '/printingapp/uploads/';
-    $basePath = '/printingapp/server/' . $uploadDir; // Base path to prepend to the file path
+    $uploadDir = 'uploads/';
+    $basePath = '/server/' . $uploadDir; // Base path to prepend to the file path
     
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0755, true);

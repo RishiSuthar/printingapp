@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 // Set proper headers
 header('Content-Type: application/json');
 
-$uploadDir = __DIR__ . '/printingapp/uploads/';  
-$uploadsFile = __DIR__ . '/printingapp/uploads.json';  
+$uploadDir = __DIR__ . '/uploads/';  
+$uploadsFile = __DIR__ . '/uploads.json';  
 
 // Check if directory exists before deleting files
 if (is_dir($uploadDir)) {
