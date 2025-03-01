@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Print Stationsss - Laptop Interface</title>
+  <title>Print Stations - Laptop Interface</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="header">
+    <img src="logo.png" class="logo" alt="Print Station Logo">
     <h1>Print Station</h1>
+  </div>
+
+  <div id="loadingSpinner" style="display: none;">
+    <div class="spinner"></div>
+    <p>Refreshing...</p>
+  </div>
+
+  <div class="container">
     <p>Scan the QR code from your mobile device to upload images:</p>
     <!-- Adjust the data parameter to your local server URL -->
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rishisuthar.github.io/printingapp/website2.html" alt="QR Code">
     
-    <h2>Uploaded Images</h2>
-    <div id="imageList"></div>
-    
+
     <h2>Total Cost: <span id="totalCost">0</span> KSH</h2>
     <button id="checkPayment">Check Payment</button>
     <button id="printButton" disabled>Print</button>
     <button id="endButton">End Session</button>
+
+    <h2>Uploaded Images</h2>
+    <div id="imageList"></div>
+    
   </div>
   <script src="website1.js"></script>
 </body>
