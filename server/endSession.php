@@ -1,7 +1,16 @@
 <?php
-// Use a LOCAL path instead of a URL
-$uploadDir = __DIR__ . '/uploads/';  // Local directory
-$uploadsFile = __DIR__ . '/uploads.json';  // Local JSON file
+// Allow only POST requests
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(["error" => "Method Not Allowed"]);
+    exit;
+}
+
+// Set proper headers
+header('Content-Type: application/json');
+
+$uploadDir = __DIR__ . '/uploads/';  
+$uploadsFile = __DIR__ . '/uploads.json';  
 
 // Check if directory exists before deleting files
 if (is_dir($uploadDir)) {
@@ -13,6 +22,7 @@ if (is_dir($uploadDir)) {
 // Clear the uploads.json file
 file_put_contents($uploadsFile, json_encode([]));
 
-header('Content-Type: application/json');  // Ensure JSON response
-echo json_encode(['status' => 'success']);
+// Send a JSON response
+echo json_encode(["status" => "success"]);
+exit;
 ?>

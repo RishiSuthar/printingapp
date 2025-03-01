@@ -102,11 +102,21 @@ endButton.addEventListener("click", async () => {
     try {
       const response = await fetch("server/endSession.php", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
       });
-      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json().catch(() => {
+        throw new Error("Invalid JSON response from server.");
+      });
+
       if (data.status === "success") {
         alert("Session ended successfully. All files have been deleted.");
-        // Optionally, you could reload the page or reset UI
         location.reload();
       } else {
         alert("Error ending the session.");
