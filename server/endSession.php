@@ -1,15 +1,18 @@
 <?php
-// Path to the uploads directory and uploads.json file
-$uploadDir = 'https://printingapp.vercel.app/server/uploads/';
-$uploadsFile = 'https://printingapp.vercel.app/server/uploads.json';
+// Use a LOCAL path instead of a URL
+$uploadDir = __DIR__ . '/uploads/';  // Local directory
+$uploadsFile = __DIR__ . '/uploads.json';  // Local JSON file
 
-// Delete all files in the uploads directory
-foreach (glob($uploadDir . '*') as $file) {
-    unlink($file);
+// Check if directory exists before deleting files
+if (is_dir($uploadDir)) {
+    foreach (glob($uploadDir . '*') as $file) {
+        unlink($file);
+    }
 }
 
 // Clear the uploads.json file
 file_put_contents($uploadsFile, json_encode([]));
 
+header('Content-Type: application/json');  // Ensure JSON response
 echo json_encode(['status' => 'success']);
 ?>
