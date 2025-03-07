@@ -7,6 +7,22 @@ const endButton = document.getElementById("endButton");
 let images = [];
 let totalCost = 0;
 
+
+
+async function fetchAndDisplayOTP() {
+  try {
+    const response = await fetch('server/getOTP.php');
+    const data = await response.json();
+    document.getElementById('otpDisplay').textContent = data.otp;
+  } catch (error) {
+    console.error('Error fetching OTP:', error);
+  }
+}
+
+// Initial fetch
+fetchAndDisplayOTP();
+
+
 // Fetch uploaded images from the server (simulate with a JSON file)
 async function fetchUploadedImages() {
   try {
@@ -121,6 +137,11 @@ checkPaymentButton.addEventListener("click", () => {
 
 printButton.addEventListener("click", () => {
   // Create a new window for printing
+
+  if (printButton.disabled) {
+    alert("Click the check payment button first and make sure payment is made");
+    return; // Stop further execution
+  }
   const printWindow = window.open("", "", "height=600,width=800");
 
   // Array to track loaded images

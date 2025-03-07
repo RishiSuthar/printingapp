@@ -15,11 +15,20 @@
     <h1>Upload Photos</h1>
   </div>
 
+
+  <div class="otp-section">
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button id="submitOtp">Submit</button>
+    <p id="otpError" style="color: red; display: none;">Invalid OTP</p>
+  </div>
+
+
   <div class="container">
     <input type="file" id="fileInput" multiple accept="image/*">
-    <div id="imagePreview"></div> <!-- Image preview container -->
-    <p>Total Cost: <span id="totalCost">0</span> KSH</p>
     <button id="uploadButton">Upload & Pay</button>
+    <p id="totalCost1">Total Cost: <span id="totalCost">0</span> KSH</p>
+    <div id="imagePreview"></div> <!-- Image preview container -->
+
 
     <!-- Progress bar to show upload progress -->
     <div id="progressContainer" style="display: none;">

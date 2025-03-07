@@ -21,15 +21,20 @@
   </div>
 
   <div class="container">
+    <button id="endButton">X   End Session</button>
+    <br>
+    <br>
     <p>Scan the QR code from your mobile device to upload images:</p>
     <!-- Adjust the data parameter to your local server URL -->
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rishisuthar.github.io/printingapp/website2.html" alt="QR Code">
     
+    <p class="otp-number">OTP: <span id="otpDisplay" >Loading...</span></p>
 
-    <h2>Total Cost: <span id="totalCost">0</span> KSH</h2>
+    <h2 id="totalcostdiv">Total Cost: <span id="totalCost">0</span> KSH</h2>
+
     <button id="checkPayment">Check Payment</button>
     <button id="printButton" disabled>Print</button>
-    <button id="endButton">End Session</button>
+
 
     <h2>Uploaded Images</h2>
     <div id="imageList"></div>

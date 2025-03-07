@@ -35,4 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Invalid request.']);
 }
+
+
+$otp = isset($_POST['otp']) ? trim($_POST['otp']) : '';
+$currentOtp = file_get_contents(__DIR__ . '/otp.txt');
+
+if ($otp !== $currentOtp) {
+    http_response_code(403);
+    die(json_encode(['error' => 'Invalid OTP']));
+}
+
+
 ?>

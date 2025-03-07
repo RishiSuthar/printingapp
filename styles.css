@@ -1,6 +1,6 @@
 /* Updated CSS with logo, animated background, and modern features */
 :root {
-  --primary-color: #2563eb;
+  --primary-color: #000000;
   --secondary-color: #4f46e5;
   --success-color: #22c55e;
   --danger-color: #ef4444;
@@ -37,41 +37,29 @@ body::before {
   opacity: 0.3;
 }
 
-.container {
-  background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  border: var(--glass-border);
-  padding: 2.5rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  position: relative;
-  overflow: hidden;
-}
-
 /* Logo styling */
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 h1 {
   color: var(--primary-color);
-  font-size: 2.75rem;
+  font-size: 1.75rem;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
 
 /* Enhanced image grid */
 #imageList, #imagePreview {
@@ -213,4 +201,271 @@ button i { /* Add Font Awesome icons if needed */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+
+.otp-number {
+  font-size: 2em; /* Increase font size */
+  color: green; /* Set text color to green */
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.otp-display {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Centered OTP Section */
+.otp-section {
+max-width: 320px;
+margin: 2rem auto;
+padding: 1.5rem;
+background: var(--card-bg);
+border-radius: 16px;
+box-shadow: var(--shadow);
+text-align: center;
+}
+
+#otpInput {
+width: 200px;
+padding: 1rem;
+margin: 0 auto;
+font-size: 1.2rem;
+text-align: center;
+letter-spacing: 0.3em;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+transition: all 0.3s ease;
+}
+
+#otpInput:focus {
+border-color: var(--primary-color);
+box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+outline: none;
+}
+
+#submitOtp {
+margin-top: 1rem;
+padding: 0.75rem 1.5rem;
+width: auto;
+display: inline-block;
+background: var(--primary-color);
+color: white;
+border-radius: 8px;
+transition: transform 0.2s ease;
+}
+
+#submitOtp:hover {
+transform: translateY(-2px);
+background: var(--secondary-color);
+cursor: pointer;
+}
+
+#otpError {
+margin-top: 1rem;
+padding: 0.75rem;
+background: rgba(239, 68, 68, 0.1);
+border-radius: 8px;
+color: var(--danger-color);
+display: inline-block;
+}
+
+.container {
+max-width: 600px; /* Reduced max-width for better centering on smaller screens */
+margin: 2rem auto; /* Ensures centering */
+padding: 2.5rem;
+background: var(--card-bg);
+backdrop-filter: blur(10px);
+border-radius: 20px;
+box-shadow: var(--shadow);
+border: var(--glass-border);
+position: relative;
+overflow: hidden;
+text-align: center; /* Center aligns all content inside */
+}
+
+#imagePreview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#imagePreview img {
+  max-width: 150px; /* Adjust image size as needed */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#uploadButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  width: auto;
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+
+}
+
+#uploadButton:hover {
+  transform: translateY(-2px);
+  background: var(--secondary-color);
+}
+
+
+#totalCost1{  
+  color: rgb(255, 0, 0);
+  padding: 5px 2px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+#totalcostdiv {
+  border: 2px solid rgb(78, 78, 78);
+  border-radius: 20px;
+}
+
+
+
+#printButton {
+  align-items: center;
+  appearance: none;
+  background-color: #000e17;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: CircularStd,sans-serif;
+  font-size: 1rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 6px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#printButton:active,
+#printButton:focus {
+  outline: none;
+}
+
+#printButton:hover {
+  background-position: -20px -20px;
+  background-color: #0000a2;
+}
+
+#printButton:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+
+
+
+#endButton {
+  align-items: center;
+  appearance: none;
+  background-color: #dd0000;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: CircularStd,sans-serif;
+  font-size: 1rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 6px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#endButton:active,
+#endButton:focus {
+  outline: none;
+}
+
+#endButton:hover {
+  background-position: -20px -20px;
+  background-color: #0000a2;
+}
+
+#endButton:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+
+
+#checkPayment {
+  align-items: center;
+  appearance: none;
+  background-color: #008a17;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: CircularStd,sans-serif;
+  font-size: 1rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 6px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#checkPayment:active,
+#checkPayment:focus {
+  outline: none;
+}
+
+#checkPayment:hover {
+  background-position: -20px -20px;
+  background-color: #0000a2;
+}
+
+#checkPayment:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }

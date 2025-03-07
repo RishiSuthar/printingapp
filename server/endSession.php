@@ -22,6 +22,10 @@ if (is_dir($uploadDir)) {
 // Clear the uploads.json file
 file_put_contents($uploadsFile, json_encode([]));
 
+$newOtp = str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT);
+file_put_contents(__DIR__ . '/otp.txt', $newOtp);
+
+
 // Send a JSON response
 echo json_encode(["status" => "success"]);
 exit;
