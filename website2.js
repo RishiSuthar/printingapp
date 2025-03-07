@@ -71,19 +71,7 @@ function showSuccessPopup(message) {
       <button onclick="this.parentElement.parentElement.remove()">OK</button>
     </div>
   `;
-
-  // Add styles dynamically
-  popup.style.position = "fixed";
-  popup.style.top = "50%";
-  popup.style.left = "50%";
-  popup.style.transform = "translate(-50%, -50%)";
-  popup.style.backgroundColor = "#4CAF50";
-  popup.style.padding = "20px";
-  popup.style.borderRadius = "8px";
-  popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-  popup.style.zIndex = "1000";
-  popup.style.color = "white";
-
+  
   document.body.appendChild(popup);
 }
 

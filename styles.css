@@ -123,22 +123,16 @@ h1 {
 /* Floating action buttons */
 .button-group {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
+  justify-content: center; /* Centers buttons */
+  align-items: center;
   flex-wrap: wrap;
+  position: relative; /* Ensure it stays in flow */
 }
 
 button {
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
+  position: relative;
 }
+
 
 button i { /* Add Font Awesome icons if needed */
   font-size: 1.2em;
@@ -472,4 +466,56 @@ text-align: center; /* Center aligns all content inside */
 
 #printButton:disabled {
   cursor: not-allowed;
+}
+
+
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+  width: 250px;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-content p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.popup-content button {
+  background-color: white;
+  color: #4caf50;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+  .success-popup {
+    top: 10px;
+    left: 10px;
+    transform: none;
+    width: 200px;
+    padding: 15px;
+  }
 }
