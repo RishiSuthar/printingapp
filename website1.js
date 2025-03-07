@@ -135,13 +135,18 @@ checkPaymentButton.addEventListener("click", () => {
     .catch((error) => console.error("Error checking payment:", error));
 });
 
+
+printButton.addEventListener("mouseover", () => {
+  if (printButton.disabled) {
+    printButton.title = "Click the check payment button first and make sure payment is made"; // Show tooltip on hover
+  }
+});
+
+
+
 printButton.addEventListener("click", () => {
   // Create a new window for printing
 
-  if (printButton.disabled) {
-    alert("Click the check payment button first and make sure payment is made");
-    return; // Stop further execution
-  }
   const printWindow = window.open("", "", "height=600,width=800");
 
   // Array to track loaded images
