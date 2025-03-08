@@ -99,6 +99,7 @@ async function updateUI() {
   imageList.innerHTML = "";
   totalCost = images.length * 50;
   totalCostEl.textContent = totalCost;
+  document.getElementById('imageCount').textContent = images.length;
 
   for (const image of images) {
     const img = document.createElement("img");

@@ -54,10 +54,15 @@ submitOtpButton.addEventListener("click", async () => {
   }
 });
 
-// File Input Handler
+
 fileInput.addEventListener("change", () => {
   selectedFiles = Array.from(fileInput.files);
-  totalCostEl.textContent = selectedFiles.length * 50;
+  const fileCount = selectedFiles.length;
+  
+  // Update both cost and file count
+  totalCostEl.textContent = fileCount * 50; // Assuming 50 KSH per file
+  document.getElementById("fileCount").textContent = fileCount;
+  
   updateImagePreview();
 });
 
@@ -171,11 +176,13 @@ function showOtpError(message) {
   uploadButton.disabled = true;
 }
 
+
 function resetUploadInterface() {
   validOtp = null;
   fileInput.value = "";
   selectedFiles = [];
   totalCostEl.textContent = "0";
+  document.getElementById("fileCount").textContent = "0";
   document.getElementById("imagePreview").innerHTML = "";
   fileInput.disabled = true;
   uploadButton.disabled = true;
@@ -206,4 +213,13 @@ window.addEventListener('DOMContentLoaded', () => {
   
   // Clear any existing preferences
   localStorage.removeItem('instructionsCollapsed');
+});
+
+document.getElementById('fileInput').addEventListener('change', function() {
+  const fileCount = this.files.length;
+  if(fileCount > 0) {
+    this.setAttribute('data-file-count', `${fileCount} file${fileCount > 1 ? 's' : ''} selected`);
+  } else {
+    this.removeAttribute('data-file-count');
+  }
 });
