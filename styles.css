@@ -198,18 +198,25 @@ button i { /* Add Font Awesome icons if needed */
 }
 
 
-
 .otp-number {
-  font-size: 2em; /* Increase font size */
-  color: green; /* Set text color to green */
+  font-size: 2em;
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: normal; /* Reduced from 0.1em for tighter spacing */
+  margin: 1.7rem 0;
+  color: black; /* Set default color to black for the entire element */
 }
 
-.otp-display {
-  text-align: center;
-  margin-bottom: 1rem;
+.otp-number #otpDisplay {
+  color: green; /* Only the code itself will be green */
+  margin-left: 0.3rem; /* Small separation between label and code */
+  letter-spacing: 0.1em; /* Keep letter spacing only for the code */
 }
+
+/* If you want even tighter integration */
+.session-code-label {
+  display: inline-block; /* Allows for better spacing control */
+  margin-right: 0.2rem;
+} 
 
 /* Centered OTP Section */
 .otp-section {
@@ -226,9 +233,9 @@ text-align: center;
 width: 200px;
 padding: 1rem;
 margin: 0 auto;
-font-size: 1.2rem;
+font-size: 1.15rem;
 text-align: center;
-letter-spacing: 0.3em;
+letter-spacing: 0.1em;
 border: 2px solid #e2e8f0;
 border-radius: 12px;
 transition: all 0.3s ease;

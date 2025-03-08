@@ -22,7 +22,7 @@ submitOtpButton.addEventListener("click", async () => {
   const enteredOtp = otpInput.value.trim();
   
   if (!enteredOtp) {
-    showOtpError("Please enter OTP");
+    showOtpError("Please enter Session Code");
     return;
   }
 
@@ -44,12 +44,12 @@ submitOtpButton.addEventListener("click", async () => {
       uploadButton.disabled = false;
       
       // Show success popup
-      showSuccessPopup("OTP verified successfully! 🎉\nYou can now upload files.");
+      showSuccessPopup("Code verified successfully! 🎉\nYou can now upload files.");
     } else {
-      showOtpError("Invalid OTP. Please try again.");
+      showOtpError("Invalid Session Code. Please try again.");
     }
   } catch (error) {
-    showOtpError("Error validating OTP. Please try again.");
+    showOtpError("Error validating Session Code. Please try again.");
     console.error("OTP validation error:", error);
   }
 });
@@ -136,7 +136,7 @@ uploadButton.addEventListener("click", async () => {
         if (response.error) {
           handleUploadError(response.error);
         } else {
-          alert(`Upload successful! Please pay ${totalCostEl.textContent} KSH.`);
+          alert(`Upload successful!`);
           location.reload();
         }
       } catch (e) {

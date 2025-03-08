@@ -23,7 +23,7 @@
     </div>
     <div class="collapsible-content">
       <p>1. Scan the QR code with your mobile device, this will take you to a different website to upload photos</p>
-      <p>2. Enter the <b>OTP</b> shown in green on the website on your mobile.</p>
+      <p>2. Enter the <b>Session Code</b> shown in green on the website on your mobile.</p>
       <p>2. After upload is succesfull please press the <b>Check Payment</b> button to confirm payment</p>
       <p>3. If payment is succesful <b>Print button</b> will be <b>enabled</b> and you will be able to print</p>
       <p>4. Please click the <b>End Session</b> button once you are finished printing</p>
@@ -42,8 +42,11 @@
     <p>Scan the QR code from your mobile device to upload images:</p>
     <!-- Adjust the data parameter to your local server URL -->
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rishisuthar.github.io/printingapp/website2.html" alt="QR Code">
-    
-    <p class="otp-number">OTP: <span id="otpDisplay" >Loading...</span></p>
+
+    <p class="otp-number">
+      <span class="session-code-label">Session Code:</span>
+      <span id="otpDisplay">Loading...</span>
+    </p>
 
     <h2 id="totalcostdiv">Total Cost: <span id="totalCost">0</span> KSH</h2>
 
