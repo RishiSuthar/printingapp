@@ -159,13 +159,37 @@ uploadButton.addEventListener("click", async () => {
 // Helper Functions
 function updateImagePreview() {
   const previewContainer = document.getElementById("imagePreview");
+  
+  // Clean up existing object URLs
+  Array.from(previewContainer.children).forEach(child => {
+    const img = child.querySelector('img');
+    if (img) URL.revokeObjectURL(img.src);
+  });
   previewContainer.innerHTML = "";
 
-  selectedFiles.forEach((file) => {
+  selectedFiles.forEach((file, index) => {
+    const container = document.createElement("div");
+    container.className = "preview-container";
+
     const img = document.createElement("img");
     img.src = URL.createObjectURL(file);
     img.classList.add("preview-image");
-    previewContainer.appendChild(img);
+
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "remove-image-btn";
+    removeBtn.innerHTML = "×";
+    removeBtn.addEventListener("click", () => {
+      // Remove the corresponding file from the array
+      selectedFiles.splice(index, 1);
+      // Update the preview and counters
+      updateImagePreview();
+      document.getElementById("fileCount").textContent = selectedFiles.length;
+      totalCostEl.textContent = selectedFiles.length * 50;
+    });
+
+    container.appendChild(img);
+    container.appendChild(removeBtn);
+    previewContainer.appendChild(container);
   });
 }
 
