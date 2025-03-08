@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Upload Photos - Mobile Interface</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,9 +13,24 @@
 <body>
   <div class="header">
     <img src="logo.png" class="logo" alt="Print Station Logo">
-    <h1>Upload Photos</h1>
+    <h1>Dynamic Printing - Upload Photos</h1>
   </div>
 
+
+
+  <div class="instruction-box">
+    <div class="instruction-header">
+      <h2 class="instruction-title">INSTRUCTIONS</h2>
+      <button class="toggle-btn">▼</button>
+    </div>
+    <div class="collapsible-content">
+      <p>Note: <b>Choose Files</b> button will be <b>disabled</b> until you enter the correct <b>OTP</b></p>
+      <p>1. Enter OTP from the main station</p>
+      <p>2. Select photos to upload</p>
+      <p>3. Press <b>Upload & Pay</b></p>
+      <p>4. Payment instuctions will be shown at the <b>main station</b></p>
+    </div>
+  </div>
 
   <div class="otp-section">
     <input type="text" id="otpInput" placeholder="Enter OTP">

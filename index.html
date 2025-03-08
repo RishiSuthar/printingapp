@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Print Stations - Laptop Interface</title>
+  <title>Dynamic Printing</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +13,21 @@
 <body>
   <div class="header">
     <img src="logo.png" class="logo" alt="Print Station Logo">
-    <h1>Print Station</h1>
+    <h1>Dynamic Printing - Main Station</h1>
+  </div>
+
+  <div class="instruction-box">
+    <div class="instruction-header">
+      <h2 class="instruction-title">INSTRUCTIONS</h2>
+      <button class="toggle-btn">▼</button>
+    </div>
+    <div class="collapsible-content">
+      <p>1. Scan the QR code with your mobile device, this will take you to a different website to upload photos</p>
+      <p>2. Enter the <b>OTP</b> shown in green on the website on your mobile.</p>
+      <p>2. After upload is succesfull please press the <b>Check Payment</b> button to confirm payment</p>
+      <p>3. If payment is succesful <b>Print button</b> will be <b>enabled</b> and you will be able to print</p>
+      <p>4. Please click the <b>End Session</b> button once you are finished printing</p>
+    </div>
   </div>
 
   <div id="loadingSpinner" style="display: none;">

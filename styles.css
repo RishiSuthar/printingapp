@@ -47,8 +47,8 @@ body::before {
 }
 
 .logo {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -518,4 +518,83 @@ text-align: center; /* Center aligns all content inside */
     width: 200px;
     padding: 15px;
   }
+}
+
+.instruction-box {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem auto 2rem;
+  max-width: 600px;
+  box-shadow: var(--shadow);
+  border: var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.instruction-header {
+  position: relative;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px; /* Ensure consistent height */
+}
+
+.instruction-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.toggle-btn.collapsed {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/* Rest of the existing styles remain the same */
+.collapsible-content {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.2s ease;
+}
+
+.collapsible-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.instruction-box p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  line-height: 1.4;
+  padding-left: 0.5rem;
+}
+
+.instruction-box p:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.instruction-box p:last-child {
+  margin-bottom: 0;
 }

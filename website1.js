@@ -248,3 +248,23 @@ endButton.addEventListener("click", async () => {
 
 // Initial fetch of uploaded images
 fetchUploadedImages();
+
+document.querySelectorAll('.instruction-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+    const button = header.querySelector('.toggle-btn');
+    content.classList.toggle('collapsed');
+    button.classList.toggle('collapsed');
+  });
+});
+
+// Always collapse on initial load
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.collapsible-content').forEach(content => {
+    content.classList.add('collapsed');
+    content.previousElementSibling.querySelector('.toggle-btn').classList.add('collapsed');
+  });
+  
+  // Clear any existing preferences
+  localStorage.removeItem('instructionsCollapsed');
+});
